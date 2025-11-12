@@ -1,0 +1,157 @@
+🧠 Linked List (C) — Pseudo Code in English Sentences
+🔹 Start
+
+↓
+Define Node structure (contains: data, next)
+↓
+Set head = NULL
+
+🔹 Function: createNode(value)
+
+↓
+Allocate memory for a new node
+↓
+Set newNode.data = value
+↓
+Set newNode.next = NULL
+↓
+Return newNode
+↓
+End createNode
+
+🔹 Function: insertAtBeginning(value)
+
+↓
+Call createNode(value) and store it in newNode
+↓
+If head == NULL → set head = newNode
+↓
+Else →
+    Set newNode.next = head
+    Set head = newNode
+↓
+End insertAtBeginning
+
+🔹 Function: insertAtEnd(value)
+
+↓
+Call createNode(value) and store it in newNode
+↓
+If head == NULL → set head = newNode
+↓
+Else →
+    Set temp = head
+    While temp.next != NULL → move temp = temp.next
+    Set temp.next = newNode
+↓
+End insertAtEnd
+
+🔹 Function: insertAtPosition(value, position)
+
+↓
+Call createNode(value) and store it in newNode
+↓
+If position == 1 → set newNode.next = head, then head = newNode
+↓
+Else →
+    Set temp = head
+    Move temp until one node before desired position
+    Set newNode.next = temp.next
+    Set temp.next = newNode
+↓
+End insertAtPosition
+
+🔹 Function: deleteAtBeginning()
+
+↓
+If head == NULL → print "List is empty" and stop
+↓
+Else →
+    Set temp = head
+    Set head = head.next
+    Free memory of temp
+↓
+End deleteAtBeginning
+
+🔹 Function: deleteAtEnd()
+
+↓
+If head == NULL → print "List is empty"
+↓
+Else if head.next == NULL → free head, set head = NULL
+↓
+Else →
+    Set temp = head
+    While temp.next.next != NULL → move temp = temp.next
+    Free the last node (temp.next)
+    Set temp.next = NULL
+↓
+End deleteAtEnd
+
+🔹 Function: deleteAtPosition(position)
+
+↓
+If head == NULL → print "List is empty"
+↓
+Else if position == 1 → call deleteAtBeginning()
+↓
+Else →
+    Set temp = head
+    Move temp until one node before given position
+    Set toDelete = temp.next
+    Set temp.next = toDelete.next
+    Free memory of toDelete
+↓
+End deleteAtPosition
+
+🔹 Function: searchElement(value)
+
+↓
+If head == NULL → print "List is empty"
+↓
+Else →
+    Set temp = head, position = 1
+    While temp != NULL:
+      If temp.data == value → print "Found at position", break
+      Else move temp = temp.next, increase position
+↓
+If not found → print "Value not found"
+↓
+End searchElement
+
+🔹 Function: displayList()
+
+↓
+If head == NULL → print "List is empty"
+↓
+Else →
+    Set temp = head
+    While temp != NULL:
+      Print temp.data → move temp = temp.next
+↓
+Print "NULL" at the end
+↓
+End displayList
+
+🔹 Main Function
+
+↓
+Start
+↓
+Call insertAtEnd(10)
+↓
+Call insertAtEnd(20)
+↓
+Call insertAtBeginning(5)
+↓
+Call insertAtPosition(15, 3)
+↓
+Call displayList()
+↓
+Call searchElement(20)
+↓
+Call deleteAtEnd()
+↓
+Call displayList()
+↓
+End
