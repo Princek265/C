@@ -45,13 +45,13 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "program": "c:/Users/princ/Desktop/C/my-learn/linked-list/build/Debug/outDebug",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "c:/Users/princ/Desktop/C/my-learn/linked-list",
       "externalConsole": true,
+      "cwd": "e:/GITRepo/C/my-learn/Stack/self",
+      "program": "e:/GITRepo/C/my-learn/Stack/self/build/Debug/outDebug",
       "MIMode": "gdb",
-      "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe",
+      "miDebuggerPath": "gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
